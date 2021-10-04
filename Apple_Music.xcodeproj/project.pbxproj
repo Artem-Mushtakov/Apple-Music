@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		AC701374270B074400CD69FF /* Apple_MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC701373270B074300CD69FF /* Apple_MusicApp.swift */; };
-		AC701376270B074400CD69FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC701375270B074400CD69FF /* ContentView.swift */; };
 		AC701378270B074900CD69FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC701377270B074900CD69FF /* Assets.xcassets */; };
 		AC70137B270B074900CD69FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC70137A270B074900CD69FF /* Preview Assets.xcassets */; };
+		AC701386270B0CA700CD69FF /* MediaLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC701385270B0CA700CD69FF /* MediaLibraryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC701370270B074300CD69FF /* Apple_Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apple_Music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC701373270B074300CD69FF /* Apple_MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_MusicApp.swift; sourceTree = "<group>"; };
-		AC701375270B074400CD69FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC701377270B074900CD69FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC70137A270B074900CD69FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC701385270B0CA700CD69FF /* MediaLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibraryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,8 @@
 		AC701372270B074300CD69FF /* Apple_Music */ = {
 			isa = PBXGroup;
 			children = (
-				AC701373270B074300CD69FF /* Apple_MusicApp.swift */,
-				AC701375270B074400CD69FF /* ContentView.swift */,
+				AC701381270B0B9E00CD69FF /* App */,
+				AC701382270B0BB300CD69FF /* View */,
 				AC701377270B074900CD69FF /* Assets.xcassets */,
 				AC701379270B074900CD69FF /* Preview Content */,
 			);
@@ -65,6 +65,38 @@
 				AC70137A270B074900CD69FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC701381270B0B9E00CD69FF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AC701373270B074300CD69FF /* Apple_MusicApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AC701382270B0BB300CD69FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC701384270B0C5700CD69FF /* Modules */,
+				AC701383270B0BC300CD69FF /* Models */,
+				AC701385270B0CA700CD69FF /* MediaLibraryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC701383270B0BC300CD69FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC701384270B0C5700CD69FF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC701376270B074400CD69FF /* ContentView.swift in Sources */,
 				AC701374270B074400CD69FF /* Apple_MusicApp.swift in Sources */,
+				AC701386270B0CA700CD69FF /* MediaLibraryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

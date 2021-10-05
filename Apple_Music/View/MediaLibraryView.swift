@@ -9,7 +9,19 @@ import SwiftUI
 
 struct MediaLibraryView: View {
     var body: some View {
-        Text("Hello, World!")
+        
+        let buttonCreate = Button(action: { }) {
+            Text("Править").foregroundColor(Color.red)
+        }
+     
+        NavigationView {
+            VStack {
+                MediaLibraryTabBar()
+            }
+            
+            .navigationBarTitle(Text("Медиатека"))
+            .navigationBarItems(trailing: buttonCreate)
+        }
     }
 }
 

@@ -26,10 +26,10 @@ struct MediaLibraryPlayer: View {
             Spacer()
             
             Button(action: {}) {
-            Image(systemName: "play.fill")
-                .frame(alignment: .topLeading)
-                .offset(x: -15, y: 0)
-                .foregroundColor(.black)
+                Image(systemName: "play.fill")
+                    .frame(alignment: .topLeading)
+                    .offset(x: -15, y: 0)
+                    .foregroundColor(.black)
             }
             
             Button(action: {}) {

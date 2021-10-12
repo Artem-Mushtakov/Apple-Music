@@ -1,5 +1,5 @@
 //
-//  MediaLibraryViewInfo.swift
+//  LibraryViewInfo.swift
 //  Apple_Music
 //
 //  Created by Артем on 08.10.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MediaLibraryViewInfo: View {
+struct LibraryViewInfo: View {
     var body: some View {
         VStack {
             Spacer()
@@ -23,12 +23,14 @@ struct MediaLibraryViewInfo: View {
                 .multilineTextAlignment(.center)
             
             Spacer()
+            
+            PlayerView()
         }
     }
 }
 
 struct MediaLibraryViewInfo_Previews: PreviewProvider {
     static var previews: some View {
-        MediaLibraryViewInfo()
+        LibraryViewInfo()
     }
 }

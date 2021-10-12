@@ -1,5 +1,5 @@
 //
-//  MediaLibraryPlayer.swift
+//  LibraryPlayer.swift
 //  Apple_Music
 //
 //  Created by Артем on 05.10.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MediaLibraryPlayer: View {
+struct PlayerView: View {
     var body: some View {
         
         HStack {
@@ -45,6 +45,6 @@ struct MediaLibraryPlayer: View {
 
 struct MediaLibraryPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        MediaLibraryPlayer()
+        PlayerView()
     }
 }

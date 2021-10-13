@@ -26,10 +26,10 @@ struct LibraryViewList: View {
                     LibraryModel.data.move(fromOffsets: indexSet,
                                            toOffset: index)
                 }
-            }.environment(\.editMode, $isEditMode)
-                .listStyle(.inset)
-                .accentColor(.red)
-            PlayerView()
+            }
+            .environment(\.editMode, $isEditMode)
+            .listStyle(.inset)
+            .accentColor(.red)
         }
     }
 }

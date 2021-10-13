@@ -13,31 +13,25 @@ struct TabBar: View {
             
             TabView {
                 LibraryView()
-                
                     .tabItem {
                         Image(systemName: "rectangle.stack.badge.play")
                         Text("Медиатека")
                     }
-                NavigationView {
-                    Text("Радио")
-                        .navigationBarTitle(Text("Радио"))
-                }
                 
-                .tabItem {
-                    Image(systemName: "dot.radiowaves.left.and.right")
-                    Text("Радио")
-                }
+                Text("Радио")
+                    .tabItem {
+                        Image(systemName: "dot.radiowaves.left.and.right")
+                        Text("Радио")
+                    }
                 
-                NavigationView {
-                    Text("Поиск")
-                        .navigationBarTitle(Text("Поиск"))
-                }
-                
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Поиск")
-                }
-            }.accentColor(Color.red)
+                Text("Поиск")
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Поиск")
+                    }
+            }
+            .accentColor(Color.red)
+            PlayerView()
         }
     }
 }

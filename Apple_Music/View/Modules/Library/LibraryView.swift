@@ -16,7 +16,6 @@ struct LibraryView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             
             NavigationView {
-                
                 VStack {
                     if showFilter {
                         LibraryViewInfo()
@@ -24,7 +23,6 @@ struct LibraryView: View {
                         LibraryViewList()
                     }
                 }
-                
                 .navigationBarTitle(Text("Медиатека"))
                 .navigationBarItems(trailing: Button(action: {
                     showFilter.toggle()
@@ -36,7 +34,6 @@ struct LibraryView: View {
                     }
                 }))
             }
-            
         }
     }
 }

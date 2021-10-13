@@ -23,8 +23,6 @@ struct LibraryViewInfo: View {
                 .multilineTextAlignment(.center)
             
             Spacer()
-            
-            PlayerView()
         }
     }
 }

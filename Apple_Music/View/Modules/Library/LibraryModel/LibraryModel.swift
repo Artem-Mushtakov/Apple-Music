@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct LibraryModel: Hashable {
     let image: String

@@ -41,10 +41,11 @@ struct PlayerView: View {
                 
             }
             .frame(width: 390, height: 80)
+            .background(Color.white)
         }
         .frame(height:65)
-        .background(Color.init("LightGray"))
         .offset(y: -50)
+        
     }
 }
 

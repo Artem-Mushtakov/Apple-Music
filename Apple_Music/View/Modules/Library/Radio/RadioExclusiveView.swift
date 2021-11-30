@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RadioExclusiveView: View {
     
-    @State private var dataModel = RadioModelExclusive.data
+    @ObservedObject var dataModel = RadioModelExclusiveData()
     
     var rows  = [GridItem(.flexible())]
     
@@ -18,7 +18,7 @@ struct RadioExclusiveView: View {
         ScrollView(.horizontal, showsIndicators: false){
             LazyHGrid(rows: rows, spacing: 10) {
                 
-                ForEach(dataModel, id: \.id) { data in
+                ForEach(dataModel.data, id: \.id) { data in
                     
                     VStack(alignment: .leading) {
                         Divider()

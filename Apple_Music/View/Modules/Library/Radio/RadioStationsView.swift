@@ -9,8 +9,7 @@ import SwiftUI
 
 struct RadioStationsView: View {
     
-    @State private var dataModel = RadioModelStations.data
-    
+    @ObservedObject var dataModel = RadioModelStationsData()
     var columns  = [GridItem(.flexible())]
     
     var body: some View {
@@ -23,7 +22,7 @@ struct RadioStationsView: View {
                 Text("Станции")
                     .font(.title).bold()
                 
-                ForEach(dataModel, id: \.id) { data in
+                ForEach(dataModel.data, id: \.id) { data in
                     VStack {
                         HStack {
                             

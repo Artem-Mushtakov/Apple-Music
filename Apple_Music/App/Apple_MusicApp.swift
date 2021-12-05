@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
+
 @main
 struct Apple_MusicApp: App {
     var body: some Scene {

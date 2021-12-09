@@ -37,8 +37,8 @@ struct PlayerView: View {
                 Image("michaelkrugPlayer")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: expand ? height : 55, height: expand ? height : 55)
-                    .cornerRadius(15)
+                    .frame(width: expand ? height : 50, height: expand ? height : 50)
+                    .cornerRadius(10)
                 
                 if !expand {
                     Text("Михаил Круг - Золотые купола")
@@ -64,6 +64,7 @@ struct PlayerView: View {
                 }
             }
             .padding(.horizontal)
+            .padding(.vertical)
             
             VStack(spacing: 15) {
                 
@@ -89,11 +90,11 @@ struct PlayerView: View {
                 
                 HStack {
                     
-                Text("00:30")
+                    Text("00:30")
                         .font(.system(size: 12))
                     
                     Slider(value: $volume)
-                        
+                    
                     Text("3:40")
                         .font(.system(size: 12))
                 }
@@ -171,7 +172,7 @@ struct PlayerView: View {
             .opacity(expand ? 1 : 0)
             
         }
-        .frame(maxHeight: expand ? .infinity : 70)
+        .frame(maxHeight: expand ? .infinity : 60)
         .background(
             
             VStack(spacing: 0) {

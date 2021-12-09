@@ -144,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				ACE5088027569A3100FC8A69 /* SearchView */,
-				ACE5088127569A3E00FC8A69 /* SearchCategory */,
 			);
 			path = "Search screen";
 			sourceTree = "<group>";
@@ -212,6 +211,7 @@
 			children = (
 				AC578DE4275AB533006B51E2 /* SearchView.swift */,
 				AC3FD94B2756B5540028B314 /* SearchResult */,
+				ACE5088127569A3E00FC8A69 /* SearchCategory */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";

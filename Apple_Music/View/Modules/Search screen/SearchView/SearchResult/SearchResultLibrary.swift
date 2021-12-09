@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchResultLibrary: View {
     
     @ObservedObject var dataModel = RadioModelStationsData()
-    
     var columns  = [GridItem(.flexible())]
     
     var body: some View {
@@ -24,7 +23,7 @@ struct SearchResultLibrary: View {
                     .font(.title).bold()
                 
                 ForEach(0...10, id: \.self) { data in
-                        
+                    
                     VStack {
                         HStack {
                             
@@ -46,13 +45,10 @@ struct SearchResultLibrary: View {
                             
                             Spacer(minLength: 0)
                             
-                            Button {
-                                
-                            } label: {
+                            Button {} label: {
                                 Image(systemName: "ellipsis.circle")
                                     .foregroundColor(.gray)
                             }
-
                         }
                     }
                     Divider()

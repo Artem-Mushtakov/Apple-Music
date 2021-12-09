@@ -8,14 +8,13 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
+
 struct SearchResultAppleMusic: View {
     
     @ObservedObject var dataModel = RadioModelStationsData()
-    
-    private var columns  = [GridItem(.flexible())]
-    @State private var search = ""
-    
-    
+    @Binding var searchText: String
+    var columns  = [GridItem(.flexible())]
+
     var body: some View {
         
         LazyVGrid(
@@ -26,8 +25,10 @@ struct SearchResultAppleMusic: View {
                 Text("Недавние поиски")
                     .font(.title).bold()
                 
-                ForEach(dataModel.data.filter({ "\($0.title)".contains(search) || search.isEmpty}), id: \.id) { data in
+                ForEach(dataModel.data.filter({ "\($0.title)".contains(searchText) || searchText.isEmpty}), id: \.id) { data in
+                    
                     VStack {
+                        
                         HStack {
                             
                             Image(data.image)
@@ -47,30 +48,28 @@ struct SearchResultAppleMusic: View {
                             }
                             Spacer(minLength: 0)
                             
-                            Button {
-                                
-                            } label: {
+                            Button {} label: {
                                 Image(systemName: "ellipsis.circle")
                                     .foregroundColor(.gray)
                                     .padding()
                             }
-
                         }
                     }
                     Divider()
                 }
-                .searchable(text: $search)
             }
             .padding(.horizontal)
             .padding(.bottom, 50)
     }
-    
 }
 
 @available(iOS 15.0, *)
 
 struct SearchResultAppleMusic_Previews: PreviewProvider {
+    
+    @State static var searchTextPreviews = ""
+    
     static var previews: some View {
-        SearchResultAppleMusic()
+        SearchResultAppleMusic(searchText: $searchTextPreviews)
     }
 }

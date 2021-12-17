@@ -7,11 +7,7 @@
 
 import Foundation
 
-class RadioModelStationsData: ObservableObject {
-    @Published var data = RadioModelStations.data
-}
-
-struct RadioModelStations: Identifiable, Hashable {
+struct RadioModelStations: Identifiable {
     let id = UUID()
     let image: String
     let title: String

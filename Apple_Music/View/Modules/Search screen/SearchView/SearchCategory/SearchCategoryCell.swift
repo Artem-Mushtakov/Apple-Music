@@ -24,9 +24,10 @@ struct SearchCategoryCell: View {
                             
                             Image(data.image)
                                 .resizable()
-                                .frame(width: 180, height: 180)
+                                .frame(width: Metric.imageFrameWidth,
+                                       height: Metric.imageFrameHeight)
                                 .scaledToFill()
-                                .cornerRadius(10)
+                                .cornerRadius(Metric.imageCornerRadius)
                         }
                     }
                 }
@@ -35,10 +36,19 @@ struct SearchCategoryCell: View {
             .padding(.trailing, 8)
         }
     }
-    
-    struct SearchCategoryCell_Previews: PreviewProvider {
-        static var previews: some View {
-            SearchCategoryCell()
-        }
+}
+
+extension SearchCategoryCell {
+
+    enum Metric {
+        static let imageFrameWidth: CGFloat = 180
+        static let imageFrameHeight: CGFloat = 100
+        static let imageCornerRadius: CGFloat = 10
+    }
+}
+
+struct SearchCategoryCell_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchCategoryCell()
     }
 }

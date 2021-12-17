@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
-
 struct TabBar: View {
     
     @State private var searchText = ""
@@ -48,8 +46,6 @@ struct TabBar: View {
         }
     }
 }
-
-@available(iOS 15.0, *)
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {

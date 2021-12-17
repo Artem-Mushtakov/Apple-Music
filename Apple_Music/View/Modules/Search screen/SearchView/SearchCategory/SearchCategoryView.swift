@@ -33,7 +33,6 @@ struct SearchCategoryView: View {
             Image(systemName: "ellipsis.circle")
                 .foregroundColor(.red)
         }))
-        
         .accentColor( .black)
         .padding(.bottom, 35)
     }

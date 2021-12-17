@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
-
 struct SearchResultView: View {
     
     @State private var didTapLeft = true
@@ -24,10 +22,11 @@ struct SearchResultView: View {
                 
                 ZStack {
                     
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: Metric.buttonBackgroundCornerRadius)
                         .foregroundColor(.gray)
                         .opacity(0.4)
-                        .frame(width: 370, height: 40)
+                        .frame(width: Metric.buttonBackgroundFrameWidth,
+                               height: Metric.buttonBackgroundFrameHeight)
                     
                     HStack {
                         
@@ -40,8 +39,9 @@ struct SearchResultView: View {
                             
                             ZStack {
                                 
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 185, height: 40)
+                                RoundedRectangle(cornerRadius: Metric.buttonLeftCornerRadius)
+                                    .frame(width: Metric.buttonLeftFrameWidth,
+                                           height: Metric.buttonLeftFrameHeight)
                                     .foregroundColor(
                                         (didTapLeft ? Color.gray : Color.clear))
                                 
@@ -60,8 +60,9 @@ struct SearchResultView: View {
                             
                             ZStack {
                                 
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: 185, height: 40)
+                                RoundedRectangle(cornerRadius: Metric.buttonRightCornerRadius)
+                                    .frame(width: Metric.buttonRightFrameWidth,
+                                           height: Metric.buttonRightFrameHeight)
                                     .foregroundColor((didTapRight ? Color.gray : Color.clear))
                                 
                                 Text("Ваша медиатека")
@@ -89,7 +90,22 @@ struct SearchResultView: View {
     }
 }
 
-@available(iOS 15.0, *)
+extension SearchResultView {
+
+    enum Metric {
+        static let buttonBackgroundFrameWidth: CGFloat = 370
+        static let buttonBackgroundFrameHeight: CGFloat = 40
+        static let buttonBackgroundCornerRadius: CGFloat = 10
+
+        static let buttonLeftFrameWidth: CGFloat = 185
+        static let buttonLeftFrameHeight: CGFloat = 40
+        static let buttonLeftCornerRadius: CGFloat = 10
+
+        static let buttonRightFrameWidth: CGFloat = 185
+        static let buttonRightFrameHeight: CGFloat = 40
+        static let buttonRightCornerRadius: CGFloat = 10
+    }
+}
 
 struct SearchResultView_Previews: PreviewProvider {
     

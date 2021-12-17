@@ -12,13 +12,13 @@ struct PlayerView: View {
     @Binding var expand: Bool
     
     @State var volume: CGFloat = 0
+    @State var trackTime: CGFloat = 0
     @State var offset: CGFloat = 0
     
     var animation: Namespace.ID
     var height = UIScreen.main.bounds.height / 3
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
-    
-    
+
     var body: some View {
         
         VStack {
@@ -60,7 +60,6 @@ struct PlayerView: View {
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-                    
                 }
             }
             .padding(.horizontal)
@@ -83,7 +82,6 @@ struct PlayerView: View {
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-                    
                 }
                 .padding()
                 .padding(.top, 20)
@@ -93,7 +91,7 @@ struct PlayerView: View {
                     Text("00:30")
                         .font(.system(size: 12))
                     
-                    Slider(value: $volume)
+                    Slider(value: $trackTime)
                     
                     Text("3:40")
                         .font(.system(size: 12))
@@ -114,7 +112,7 @@ struct PlayerView: View {
                     
                     Button {} label: {
                         
-                        Image(systemName: "stop.fill")
+                        Image(systemName: "play.fill")
                             .font(.largeTitle)
                             .foregroundColor(.primary)
                     }
@@ -128,15 +126,11 @@ struct PlayerView: View {
                     }
                     .padding()
                 }
-                
                 Spacer(minLength: 0)
                 
                 HStack(spacing: 15) {
-                    
                     Image(systemName: "speaker.fill")
-                    
                     Slider(value: $volume)
-                    
                     Image(systemName: "speaker.wave.2.fill")
                 }
                 .padding()
@@ -163,14 +157,11 @@ struct PlayerView: View {
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-                    
                 }
                 .padding(.bottom, safeArea?.bottom == 0 ? 15 : safeArea?.bottom)
             }
-            
             .frame(height: expand ? nil : 0)
             .opacity(expand ? 1 : 0)
-            
         }
         .frame(maxHeight: expand ? .infinity : 60)
         .background(

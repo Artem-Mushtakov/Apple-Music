@@ -17,8 +17,7 @@ struct PlayerView: View {
     var animation: Namespace.ID
     var height = UIScreen.main.bounds.height / 3
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
-    
-    
+
     var body: some View {
         
         VStack {
@@ -60,7 +59,6 @@ struct PlayerView: View {
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-                    
                 }
             }
             .padding(.horizontal)
@@ -83,7 +81,6 @@ struct PlayerView: View {
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-                    
                 }
                 .padding()
                 .padding(.top, 20)
@@ -128,15 +125,11 @@ struct PlayerView: View {
                     }
                     .padding()
                 }
-                
                 Spacer(minLength: 0)
                 
                 HStack(spacing: 15) {
-                    
                     Image(systemName: "speaker.fill")
-                    
                     Slider(value: $volume)
-                    
                     Image(systemName: "speaker.wave.2.fill")
                 }
                 .padding()
@@ -163,14 +156,11 @@ struct PlayerView: View {
                             .font(.title2)
                             .foregroundColor(.primary)
                     }
-                    
                 }
                 .padding(.bottom, safeArea?.bottom == 0 ? 15 : safeArea?.bottom)
             }
-            
             .frame(height: expand ? nil : 0)
             .opacity(expand ? 1 : 0)
-            
         }
         .frame(maxHeight: expand ? .infinity : 60)
         .background(

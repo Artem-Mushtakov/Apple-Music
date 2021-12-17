@@ -7,10 +7,6 @@
 
 import Foundation
 
-class RadioModelExclusiveData: ObservableObject {
-    @Published var data = RadioModelExclusive.data
-}
-
 struct RadioModelExclusive: Identifiable, Hashable {
     let id = UUID()
     let image: String

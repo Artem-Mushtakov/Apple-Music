@@ -12,6 +12,7 @@ struct PlayerView: View {
     @Binding var expand: Bool
     
     @State var volume: CGFloat = 0
+    @State var trackTime: CGFloat = 0
     @State var offset: CGFloat = 0
     
     var animation: Namespace.ID
@@ -90,7 +91,7 @@ struct PlayerView: View {
                     Text("00:30")
                         .font(.system(size: 12))
                     
-                    Slider(value: $volume)
+                    Slider(value: $trackTime)
                     
                     Text("3:40")
                         .font(.system(size: 12))
@@ -111,7 +112,7 @@ struct PlayerView: View {
                     
                     Button {} label: {
                         
-                        Image(systemName: "stop.fill")
+                        Image(systemName: "play.fill")
                             .font(.largeTitle)
                             .foregroundColor(.primary)
                     }

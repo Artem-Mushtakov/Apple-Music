@@ -29,9 +29,10 @@ struct SearchResultLibrary: View {
                             
                             Image("upNextRadio")
                                 .resizable()
-                                .frame(width: 120, height: 120)
+                                .frame(width: Metric.imageFrameWidth,
+                                       height: Metric.imageFrameHeight)
                                 .scaledToFill()
-                                .cornerRadius(10)
+                                .cornerRadius(Metric.imageCornerRadius)
                             
                             VStack(alignment: .leading) {
                                 
@@ -56,6 +57,15 @@ struct SearchResultLibrary: View {
             }
             .padding(.horizontal)
             .padding(.bottom, 50)
+    }
+}
+
+extension SearchResultLibrary {
+    
+    enum Metric {
+        static let imageFrameWidth: CGFloat = 120
+        static let imageFrameHeight: CGFloat = 120
+        static let imageCornerRadius: CGFloat = 10
     }
 }
 

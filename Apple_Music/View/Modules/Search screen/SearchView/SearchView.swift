@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SearchView: View {
     
-    var columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
+    var columns = Array(
+        repeating:GridItem(.flexible(),spacing: Metric.columnsSpacing),
+        count: Metric.columnsCount)
     
     @State private var dataModel = RadioModelStations.data
     @State private var search = ""
@@ -27,7 +29,9 @@ struct SearchView: View {
                         Text("Поиск по категориям")
                             .foregroundColor(.black)
                             .font(.title2).bold()
-                            .frame(width: 370, height: 20, alignment: .leading)
+                            .frame(width: Metric.searchFrameWidth,
+                                   height: Metric.searchFrameHeight,
+                                   alignment: .leading)
                             .padding(.bottom, 5)
                             .padding(.top, -5)
                         
@@ -41,17 +45,17 @@ struct SearchView: View {
                                         
                                         Image(data.image)
                                             .resizable()
-                                            .frame(width: 180,
-                                                   height: 140,
+                                            .frame(width: Metric.imageFrameWidth,
+                                                   height: Metric.imageFrameHeight,
                                                    alignment: .leading)
                                             .scaledToFill()
-                                            .cornerRadius(10)
+                                            .cornerRadius(Metric.imageCornerRadius)
                                     }
                                     
                                     Text(data.title)
                                         .bold()
-                                        .frame(width: 170,
-                                               height: 120,
+                                        .frame(width: Metric.textFrameWidth,
+                                               height: Metric.textFrameHeight,
                                                alignment: .bottomLeading)
                                         .foregroundColor(.white)
                                         .font(.system(size: 19))
@@ -78,6 +82,24 @@ struct SearchView: View {
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Ваша медиатека")
         }
+    }
+}
+
+extension SearchView {
+    
+    enum Metric {
+        static let columnsSpacing: CGFloat = 20
+        static let columnsCount = 2
+        
+        static let searchFrameWidth: CGFloat = 370
+        static let searchFrameHeight: CGFloat = 20
+        
+        static let imageFrameWidth: CGFloat = 100
+        static let imageFrameHeight: CGFloat = 140
+        static let imageCornerRadius: CGFloat = 10
+        
+        static let textFrameWidth: CGFloat = 170
+        static var textFrameHeight: CGFloat = 120
     }
 }
 

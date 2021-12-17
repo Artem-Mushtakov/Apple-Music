@@ -36,9 +36,10 @@ struct RadioExclusiveView: View {
                         
                         Image(data.image)
                             .resizable()
-                            .frame(width: 350, height: 250)
+                            .frame(width: Metric.imageFrameWidth,
+                                   height: Metric.imageFrameHeight)
                             .scaledToFill()
-                            .cornerRadius(5)
+                            .cornerRadius(Metric.imageCornerRadius)
                         
                         Divider()
                     }
@@ -46,6 +47,15 @@ struct RadioExclusiveView: View {
             }
         }
         .padding(10)
+    }
+}
+
+extension RadioExclusiveView {
+    
+    enum Metric {
+        static let imageFrameWidth: CGFloat = 350
+        static let imageFrameHeight: CGFloat = 250
+        static let imageCornerRadius: CGFloat = 5
     }
 }
 

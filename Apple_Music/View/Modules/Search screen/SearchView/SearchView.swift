@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
-
 struct SearchView: View {
     
     var columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
@@ -82,9 +80,6 @@ struct SearchView: View {
         }
     }
 }
-
-
-@available(iOS 15.0, *)
 
 struct Search_Previews: PreviewProvider {
     static var previews: some View {

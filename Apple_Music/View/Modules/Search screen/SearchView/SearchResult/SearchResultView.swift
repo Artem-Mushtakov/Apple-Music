@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
-
 struct SearchResultView: View {
     
     @State private var didTapLeft = true
@@ -88,8 +86,6 @@ struct SearchResultView: View {
         }
     }
 }
-
-@available(iOS 15.0, *)
 
 struct SearchResultView_Previews: PreviewProvider {
     

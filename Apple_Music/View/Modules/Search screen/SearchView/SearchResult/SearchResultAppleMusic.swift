@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
-
 struct SearchResultAppleMusic: View {
     
     @ObservedObject var dataModel = RadioModelStationsData()
@@ -62,8 +60,6 @@ struct SearchResultAppleMusic: View {
             .padding(.bottom, 50)
     }
 }
-
-@available(iOS 15.0, *)
 
 struct SearchResultAppleMusic_Previews: PreviewProvider {
     

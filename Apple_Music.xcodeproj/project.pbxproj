@@ -26,6 +26,8 @@
 		ACD86EC927161DDE008FE19B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD86EC827161DDE008FE19B /* TabBar.swift */; };
 		ACE5087D2756981E00FC8A69 /* SearchCategoryBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5087C2756981E00FC8A69 /* SearchCategoryBanner.swift */; };
 		ACE5087F275699F500FC8A69 /* SearchCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5087E275699F500FC8A69 /* SearchCategoryView.swift */; };
+		ACEF4D51276D1F6F0020C64F /* RadioModelStationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF4D4F276D1F6F0020C64F /* RadioModelStationsData.swift */; };
+		ACEF4D52276D1F6F0020C64F /* RadioModelExclusiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF4D50276D1F6F0020C64F /* RadioModelExclusiveData.swift */; };
 		ACFDFC69270E268400B08C60 /* LibraryViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDFC68270E268400B08C60 /* LibraryViewList.swift */; };
 		ACFDFC6B270F8CF000B08C60 /* LibraryViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDFC6A270F8CF000B08C60 /* LibraryViewInfo.swift */; };
 		ACFDFC6E2710C6E200B08C60 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFDFC6D2710C6E200B08C60 /* LibraryModel.swift */; };
@@ -52,6 +54,8 @@
 		ACD86EC827161DDE008FE19B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		ACE5087C2756981E00FC8A69 /* SearchCategoryBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryBanner.swift; sourceTree = "<group>"; };
 		ACE5087E275699F500FC8A69 /* SearchCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryView.swift; sourceTree = "<group>"; };
+		ACEF4D4F276D1F6F0020C64F /* RadioModelStationsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioModelStationsData.swift; sourceTree = "<group>"; };
+		ACEF4D50276D1F6F0020C64F /* RadioModelExclusiveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioModelExclusiveData.swift; sourceTree = "<group>"; };
 		ACFDFC68270E268400B08C60 /* LibraryViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewList.swift; sourceTree = "<group>"; };
 		ACFDFC6A270F8CF000B08C60 /* LibraryViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewInfo.swift; sourceTree = "<group>"; };
 		ACFDFC6D2710C6E200B08C60 /* LibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 			children = (
 				ACCEA316271B18FF008108D5 /* RadioModelExclusive.swift */,
 				ACCEA320271B5FC0008108D5 /* RadioModelStations.swift */,
+				ACEF4D50276D1F6F0020C64F /* RadioModelExclusiveData.swift */,
+				ACEF4D4F276D1F6F0020C64F /* RadioModelStationsData.swift */,
 			);
 			path = RadioModel;
 			sourceTree = "<group>";
@@ -302,11 +308,13 @@
 				ACCEA321271B5FC0008108D5 /* RadioModelStations.swift in Sources */,
 				AC3FD94A2756A7A30028B314 /* SearchCategoryCell.swift in Sources */,
 				ACFDFC6E2710C6E200B08C60 /* LibraryModel.swift in Sources */,
+				ACEF4D51276D1F6F0020C64F /* RadioModelStationsData.swift in Sources */,
 				AC3FD9512756B6D80028B314 /* SearchResultView.swift in Sources */,
 				ACFDFC6B270F8CF000B08C60 /* LibraryViewInfo.swift in Sources */,
 				ACCEA317271B18FF008108D5 /* RadioModelExclusive.swift in Sources */,
 				ACCEA319271B1964008108D5 /* RadioExclusiveView.swift in Sources */,
 				ACCEA31B271B1976008108D5 /* RadioView.swift in Sources */,
+				ACEF4D52276D1F6F0020C64F /* RadioModelExclusiveData.swift in Sources */,
 				ACE5087D2756981E00FC8A69 /* SearchCategoryBanner.swift in Sources */,
 				AC3FD94F2756B5AA0028B314 /* SearchResultLibrary.swift in Sources */,
 				ACFDFC69270E268400B08C60 /* LibraryViewList.swift in Sources */,

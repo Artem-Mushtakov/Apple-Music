@@ -19,12 +19,10 @@ struct SearchView: View {
     var body: some View {
         
         NavigationView {
-            
-            ScrollView {
                 
-                VStack(spacing: Metric.vStackSpacing) {
+                VStack(spacing: 18) {
                     
-                    if search.isEmpty {
+                   if search.isEmpty {
                         
                         Text("Поиск по категориям")
                             .foregroundColor(.black)
@@ -32,56 +30,21 @@ struct SearchView: View {
                             .frame(width: Metric.searchFrameWidth,
                                    height: Metric.searchFrameHeight,
                                    alignment: .leading)
-                            .padding(.bottom, Metric.paddingBottomCategory)
-                            .padding(.top, Metric.paddingTopCategory)
-                        
-                        LazyVGrid(columns: columns) {
-                            
-                            ForEach(dataModel, id: \.id)  { data in
-                                
-                                ZStack {
-                                    
-                                    NavigationLink(destination: SearchCategoryView()) {
-                                        
-                                        Image(data.image)
-                                            .resizable()
-                                            .frame(width: Metric.imageFrameWidth,
-                                                   height: Metric.imageFrameHeight,
-                                                   alignment: .leading)
-                                            .scaledToFill()
-                                            .cornerRadius(Metric.imageCornerRadius)
-                                    }
-                                    
-                                    Text(data.title)
-                                        .bold()
-                                        .frame(width: Metric.textFrameWidth,
-                                               height: Metric.textFrameHeight,
-                                               alignment: .bottomLeading)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: Metric.fontSizeImageText))
-                                        .scaledToFill()
-                                        .padding(.leading, Metric.paddingLeadingImageText)
-                                        .padding(.bottom, Metric.paddingBottomImageText)
-                                }
-                            }
-                        }
-                        .padding(.top, Metric.vStackPaddingTop)
-                        .padding(.leading, Metric.vStackPaddingLeading)
-                        .padding(.trailing, Metric.vStackPaddingTrailing)
-                        
+                            .padding(.bottom, 5)
+                            .padding(.top, -5)
+
+                    SearchViewIntegrationUiKit()
                     } else {
+
                         SearchResultView(searchText: $search)
                     }
-                    
                 }
-                .padding()
-                .padding(.bottom, Metric.navigationViewPaddingBottom)
-            }
             .navigationBarTitle(Text("Поиск"))
-            .searchable(text: $search,
-                        placement: .navigationBarDrawer(displayMode: .always),
-                        prompt: "Ваша медиатека")
+
         }
+        .searchable(text: $search,
+                    placement: .navigationBarDrawer(displayMode: .always),
+                    prompt: "Ваша медиатека")
     }
 }
 
@@ -99,21 +62,7 @@ extension SearchView {
         static let imageCornerRadius: CGFloat = 10
         
         static let textFrameWidth: CGFloat = 170
-        static let textFrameHeight: CGFloat = 120
-
-        static let vStackSpacing: CGFloat = 18
-        static let vStackPaddingTop: CGFloat = 10
-        static let vStackPaddingLeading: CGFloat = 10
-        static let vStackPaddingTrailing: CGFloat = 10
-
-        static let navigationViewPaddingBottom: CGFloat = 80
-
-        static let paddingBottomCategory: CGFloat = 5
-        static let paddingTopCategory: CGFloat = -5
-
-        static let fontSizeImageText: CGFloat = 19
-        static let paddingLeadingImageText: CGFloat = 10
-        static let paddingBottomImageText: CGFloat = 19
+        static var textFrameHeight: CGFloat = 120
     }
 }
 

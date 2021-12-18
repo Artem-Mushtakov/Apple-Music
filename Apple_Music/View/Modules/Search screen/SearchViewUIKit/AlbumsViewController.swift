@@ -6,52 +6,13 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AlbumsViewController: UIViewController {
     
     // MARK: - Properties
     
-    var data = [ "Section0": [ModelCellMyAlbums(
-        type: .cellMyAlbums,
-        titleImage: UIImageView.init(image: UIImage(named: "imageMyAlbums1")!),
-        titleLabel: "Недавние",
-        titleCount: "9 259"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "ImageMyAlbums2")!),
-                                titleLabel: "Избранное",
-                                titleCount: "123"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "ImageMyAlbums3")!),
-                                titleLabel: "Instagram",
-                                titleCount: "654"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "ImageMyAlbums4")!),
-                                titleLabel: "WhatsApp",
-                                titleCount: "14"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "ImageMyAlbums5")!),
-                                titleLabel: "FaceApp",
-                                titleCount: "321"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "ImageMyAlbums6")!),
-                                titleLabel: "Gradient",
-                                titleCount: "456"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "ImageMyAlbums3")!),
-                                titleLabel: "Movavi Clips",
-                                titleCount: "321"),
-                              ModelCellMyAlbums(
-                                type: .cellMyAlbums,
-                                titleImage: UIImageView.init(image: UIImage(named: "imageMyAlbums1")!),
-                                titleLabel: "Недавние",
-                                titleCount: "456")]
-    ]
+    var data = ModelCellMyAlbums.data
     
     // MARK: - Lifecycle Methods
     
@@ -136,7 +97,7 @@ extension AlbumsViewController {
             widthDimension: .absolute(UIScreen.main.bounds.width),
             heightDimension: .absolute(UIScreen.main.bounds.height * 0.25))
         
-      let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         group.contentInsets = NSDirectionalEdgeInsets(top: 0,
                                                       leading: 5,
                                                       bottom: 5,

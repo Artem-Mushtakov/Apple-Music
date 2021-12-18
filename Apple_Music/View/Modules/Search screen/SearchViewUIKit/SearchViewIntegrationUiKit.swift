@@ -10,9 +10,9 @@ import UIKit
 
 struct SearchViewIntegrationUiKit: UIViewControllerRepresentable {
 
-    typealias UIViewControllerType = AlbumsViewController
+    typealias UIViewControllerType = UIViewController
 
-    func makeUIViewController(context: Context) -> AlbumsViewController {
+    func makeUIViewController(context: Context) -> UIViewController {
         return AlbumsViewController()
     }
 

@@ -19,12 +19,10 @@ struct SearchView: View {
     var body: some View {
         
         NavigationView {
-            
-            ScrollView {
                 
                 VStack(spacing: 18) {
                     
-                    if search.isEmpty {
+                   if search.isEmpty {
                         
                         Text("Поиск по категориям")
                             .foregroundColor(.black)
@@ -34,54 +32,19 @@ struct SearchView: View {
                                    alignment: .leading)
                             .padding(.bottom, 5)
                             .padding(.top, -5)
-                        
-                        LazyVGrid(columns: columns) {
-                            
-                            ForEach(dataModel, id: \.id)  { data in
-                                
-                                ZStack {
-                                    
-                                    NavigationLink(destination: SearchCategoryView()) {
-                                        
-                                        Image(data.image)
-                                            .resizable()
-                                            .frame(width: Metric.imageFrameWidth,
-                                                   height: Metric.imageFrameHeight,
-                                                   alignment: .leading)
-                                            .scaledToFill()
-                                            .cornerRadius(Metric.imageCornerRadius)
-                                    }
-                                    
-                                    Text(data.title)
-                                        .bold()
-                                        .frame(width: Metric.textFrameWidth,
-                                               height: Metric.textFrameHeight,
-                                               alignment: .bottomLeading)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 19))
-                                        .scaledToFill()
-                                        .padding(.leading, 10)
-                                        .padding(.bottom, 10)
-                                }
-                            }
-                        }
-                        .padding(.top, 10)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
-                        
+
+                    SearchViewIntegrationUiKit()
                     } else {
+
                         SearchResultView(searchText: $search)
                     }
-                    
                 }
-                .padding()
-                .padding(.bottom, 80)
-            }
             .navigationBarTitle(Text("Поиск"))
-            .searchable(text: $search,
-                        placement: .navigationBarDrawer(displayMode: .always),
-                        prompt: "Ваша медиатека")
+
         }
+        .searchable(text: $search,
+                    placement: .navigationBarDrawer(displayMode: .always),
+                    prompt: "Ваша медиатека")
     }
 }
 

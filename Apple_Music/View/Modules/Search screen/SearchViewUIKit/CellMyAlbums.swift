@@ -28,7 +28,7 @@ class CellMyAlbums: UICollectionViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = MetricCellMyAlbums.labelFont
-        label.textColor = .white
+        label.textColor = .black
         return label
     }()
     

@@ -11,15 +11,14 @@ import SwiftUI
 class AlbumsViewController: UIViewController {
     
     // MARK: - Properties
-    
-    var data = ModelCellMyAlbums.data
+
+    @ObservedObject var dataModel = RadioModelStationsData()
     
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        setupNavigationBar()
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
@@ -43,15 +42,6 @@ class AlbumsViewController: UIViewController {
         return collectionView
     }()
     
-    private func setupNavigationBar() {
-        
-        navigationItem.title = "Альбомы"
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = .clear
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTappedNavigationBar))
-    }
-    
     //MARK: - Setup Layout
     
     private func setupLayout() {
@@ -64,12 +54,6 @@ class AlbumsViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-    }
-    
-    //MARK: - Actions
-    
-    @objc private func addTappedNavigationBar() {
-        print("Press button NavigationBar: AddTapped")
     }
 }
 
@@ -94,7 +78,7 @@ extension AlbumsViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(UIScreen.main.bounds.width),
+            widthDimension: .fractionalWidth(1),
             heightDimension: .absolute(UIScreen.main.bounds.height * 0.25))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
@@ -118,23 +102,19 @@ extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data["Section\(section)"]?.count ?? 0
+        return dataModel.data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard  let data = data["Section\(indexPath.section)"]?[indexPath.row] else { return UICollectionViewCell() }
-        return setupCellMyAlbums(for: indexPath, with: data)
+        return setupCellMyAlbums(for: indexPath)
     }
-    
-    private  func setupCellMyAlbums(for indexPath: IndexPath, with data: ModelCellMyAlbums) -> UICollectionViewCell {
+
+    private  func setupCellMyAlbums(for indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellMyAlbums", for: indexPath) as? CellMyAlbums else { return UICollectionViewCell() }
-        
-        cell.titleLabel.text = data.titleLabel
-        cell.titleImage = data.titleImage
+
+        let image = UIImageView.init(image: UIImage(named: dataModel.data[indexPath.row].image))
+        cell.titleLabel.text = dataModel.data[indexPath.row].title
+        cell.titleImage = image
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Press cell: \(String(describing: data["Section\(indexPath.section)"]?[indexPath.row].titleLabel))")
     }
 }

@@ -10,13 +10,11 @@ import UIKit
 
 struct SearchViewIntegrationUiKit: UIViewControllerRepresentable {
 
-    typealias UIViewControllerType = UIViewController
-
     func makeUIViewController(context: Context) -> UIViewController {
         return AlbumsViewController()
     }
 
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
     }
 }
 

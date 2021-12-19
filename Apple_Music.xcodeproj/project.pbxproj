@@ -27,8 +27,6 @@
 		ACDD4A8D276E2DC200557BEB /* SearchViewIntegrationUiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4A8C276E2DC200557BEB /* SearchViewIntegrationUiKit.swift */; };
 		ACDD4A8F276E306900557BEB /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4A8E276E306900557BEB /* AlbumsViewController.swift */; };
 		ACDD4A97276E309F00557BEB /* CellMyAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4A96276E309F00557BEB /* CellMyAlbums.swift */; };
-		ACDD4A9A276E30AA00557BEB /* ModelCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4A98276E30AA00557BEB /* ModelCellType.swift */; };
-		ACDD4A9B276E30AA00557BEB /* ModelCellMyAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4A99276E30AA00557BEB /* ModelCellMyAlbums.swift */; };
 		ACE5087D2756981E00FC8A69 /* SearchCategoryBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5087C2756981E00FC8A69 /* SearchCategoryBanner.swift */; };
 		ACE5087F275699F500FC8A69 /* SearchCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5087E275699F500FC8A69 /* SearchCategoryView.swift */; };
 		ACEF4D51276D1F6F0020C64F /* RadioModelStationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF4D4F276D1F6F0020C64F /* RadioModelStationsData.swift */; };
@@ -60,8 +58,6 @@
 		ACDD4A8C276E2DC200557BEB /* SearchViewIntegrationUiKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewIntegrationUiKit.swift; sourceTree = "<group>"; };
 		ACDD4A8E276E306900557BEB /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		ACDD4A96276E309F00557BEB /* CellMyAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMyAlbums.swift; sourceTree = "<group>"; };
-		ACDD4A98276E30AA00557BEB /* ModelCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCellType.swift; sourceTree = "<group>"; };
-		ACDD4A99276E30AA00557BEB /* ModelCellMyAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCellMyAlbums.swift; sourceTree = "<group>"; };
 		ACE5087C2756981E00FC8A69 /* SearchCategoryBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryBanner.swift; sourceTree = "<group>"; };
 		ACE5087E275699F500FC8A69 /* SearchCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryView.swift; sourceTree = "<group>"; };
 		ACEF4D4F276D1F6F0020C64F /* RadioModelStationsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioModelStationsData.swift; sourceTree = "<group>"; };
@@ -228,8 +224,6 @@
 			children = (
 				ACDD4A8C276E2DC200557BEB /* SearchViewIntegrationUiKit.swift */,
 				ACDD4A8E276E306900557BEB /* AlbumsViewController.swift */,
-				ACDD4A99276E30AA00557BEB /* ModelCellMyAlbums.swift */,
-				ACDD4A98276E30AA00557BEB /* ModelCellType.swift */,
 				ACDD4A96276E309F00557BEB /* CellMyAlbums.swift */,
 			);
 			path = SearchViewUIKit;
@@ -339,12 +333,10 @@
 				ACCEA317271B18FF008108D5 /* RadioModelExclusive.swift in Sources */,
 				ACCEA319271B1964008108D5 /* RadioExclusiveView.swift in Sources */,
 				ACCEA31B271B1976008108D5 /* RadioView.swift in Sources */,
-				ACDD4A9A276E30AA00557BEB /* ModelCellType.swift in Sources */,
 				ACEF4D52276D1F6F0020C64F /* RadioModelExclusiveData.swift in Sources */,
 				ACE5087D2756981E00FC8A69 /* SearchCategoryBanner.swift in Sources */,
 				AC3FD94F2756B5AA0028B314 /* SearchResultLibrary.swift in Sources */,
 				ACFDFC69270E268400B08C60 /* LibraryViewList.swift in Sources */,
-				ACDD4A9B276E30AA00557BEB /* ModelCellMyAlbums.swift in Sources */,
 				ACCEA31D271B19AD008108D5 /* RadioStationsView.swift in Sources */,
 				AC701374270B074400CD69FF /* Apple_MusicApp.swift in Sources */,
 				AC70138C270CCEFD00CD69FF /* PlayerView.swift in Sources */,

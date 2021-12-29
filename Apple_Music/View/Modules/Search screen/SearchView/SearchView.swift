@@ -99,21 +99,21 @@ extension SearchView {
         static let imageCornerRadius: CGFloat = 10
         
         static let textFrameWidth: CGFloat = 170
-        static var textFrameHeight: CGFloat = 120
+        static let textFrameHeight: CGFloat = 120
 
-        static var vStackSpacing: CGFloat = 18
-        static var vStackPaddingTop: CGFloat = 10
-        static var vStackPaddingLeading: CGFloat = 10
-        static var vStackPaddingTrailing: CGFloat = 10
+        static let vStackSpacing: CGFloat = 18
+        static let vStackPaddingTop: CGFloat = 10
+        static let vStackPaddingLeading: CGFloat = 10
+        static let vStackPaddingTrailing: CGFloat = 10
 
-        static var navigationViewPaddingBottom: CGFloat = 80
+        static let navigationViewPaddingBottom: CGFloat = 80
 
-        static var paddingBottomCategory: CGFloat = 5
-        static var paddingTopCategory: CGFloat = -5
+        static let paddingBottomCategory: CGFloat = 5
+        static let paddingTopCategory: CGFloat = -5
 
-        static var fontSizeImageText: CGFloat = 19
-        static var paddingLeadingImageText: CGFloat = 10
-        static var paddingBottomImageText: CGFloat = 19
+        static let fontSizeImageText: CGFloat = 19
+        static let paddingLeadingImageText: CGFloat = 10
+        static let paddingBottomImageText: CGFloat = 19
     }
 }
 

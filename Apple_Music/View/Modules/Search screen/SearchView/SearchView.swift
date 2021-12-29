@@ -22,7 +22,7 @@ struct SearchView: View {
             
             ScrollView {
                 
-                VStack(spacing: 18) {
+                VStack(spacing: Metric.vStackSpacing) {
                     
                     if search.isEmpty {
                         
@@ -32,8 +32,8 @@ struct SearchView: View {
                             .frame(width: Metric.searchFrameWidth,
                                    height: Metric.searchFrameHeight,
                                    alignment: .leading)
-                            .padding(.bottom, 5)
-                            .padding(.top, -5)
+                            .padding(.bottom, Metric.paddingBottomCategory)
+                            .padding(.top, Metric.paddingTopCategory)
                         
                         LazyVGrid(columns: columns) {
                             
@@ -58,16 +58,16 @@ struct SearchView: View {
                                                height: Metric.textFrameHeight,
                                                alignment: .bottomLeading)
                                         .foregroundColor(.white)
-                                        .font(.system(size: 19))
+                                        .font(.system(size: Metric.fontSizeImageText))
                                         .scaledToFill()
-                                        .padding(.leading, 10)
-                                        .padding(.bottom, 10)
+                                        .padding(.leading, Metric.paddingLeadingImageText)
+                                        .padding(.bottom, Metric.paddingBottomImageText)
                                 }
                             }
                         }
-                        .padding(.top, 10)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
+                        .padding(.top, Metric.vStackPaddingTop)
+                        .padding(.leading, Metric.vStackPaddingLeading)
+                        .padding(.trailing, Metric.vStackPaddingTrailing)
                         
                     } else {
                         SearchResultView(searchText: $search)
@@ -75,7 +75,7 @@ struct SearchView: View {
                     
                 }
                 .padding()
-                .padding(.bottom, 80)
+                .padding(.bottom, Metric.navigationViewPaddingBottom)
             }
             .navigationBarTitle(Text("Поиск"))
             .searchable(text: $search,
@@ -100,6 +100,20 @@ extension SearchView {
         
         static let textFrameWidth: CGFloat = 170
         static var textFrameHeight: CGFloat = 120
+
+        static var vStackSpacing: CGFloat = 18
+        static var vStackPaddingTop: CGFloat = 10
+        static var vStackPaddingLeading: CGFloat = 10
+        static var vStackPaddingTrailing: CGFloat = 10
+
+        static var navigationViewPaddingBottom: CGFloat = 80
+
+        static var paddingBottomCategory: CGFloat = 5
+        static var paddingTopCategory: CGFloat = -5
+
+        static var fontSizeImageText: CGFloat = 19
+        static var paddingLeadingImageText: CGFloat = 10
+        static var paddingBottomImageText: CGFloat = 19
     }
 }
 

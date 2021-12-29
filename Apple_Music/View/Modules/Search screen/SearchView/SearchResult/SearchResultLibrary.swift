@@ -17,7 +17,7 @@ struct SearchResultLibrary: View {
         LazyVGrid(
             columns: columns,
             alignment: .leading,
-            spacing: 15) {
+            spacing: Metric.vGridSpacing) {
                 
                 Text("Медиатека")
                     .font(.title).bold()
@@ -37,11 +37,11 @@ struct SearchResultLibrary: View {
                             VStack(alignment: .leading) {
                                 
                                 Text("Тест")
-                                    .font(.system(size: 22))
+                                    .font(.system(size: Metric.textFontSizeUpLabel))
                                 
                                 Text("Тест")
                                     .foregroundColor(.gray)
-                                    .font(.system(size: 14))
+                                    .font(.system(size: Metric.textFontSizeDownLabel))
                             }
                             
                             Spacer(minLength: 0)
@@ -56,7 +56,7 @@ struct SearchResultLibrary: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 50)
+            .padding(.bottom, Metric.vGridPaddingBottom)
     }
 }
 
@@ -66,6 +66,12 @@ extension SearchResultLibrary {
         static let imageFrameWidth: CGFloat = 120
         static let imageFrameHeight: CGFloat = 120
         static let imageCornerRadius: CGFloat = 10
+
+        static let vGridSpacing: CGFloat = 15
+        static let vGridPaddingBottom: CGFloat = 50
+
+        static let textFontSizeUpLabel: CGFloat = 22
+        static let textFontSizeDownLabel: CGFloat = 14
     }
 }
 

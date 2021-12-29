@@ -16,7 +16,7 @@ struct SearchCategoryCell: View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             
-            LazyHGrid(rows: rows, spacing: 10) {
+            LazyHGrid(rows: rows, spacing: Metric.hGridSpacing) {
                 
                 ForEach(dataModel.data, id: \.id) { data in
                     VStack {
@@ -32,8 +32,8 @@ struct SearchCategoryCell: View {
                     }
                 }
             }
-            .padding(.leading, 8)
-            .padding(.trailing, 8)
+            .padding(.leading, Metric.hGridLeadingPadding)
+            .padding(.trailing, Metric.hGridTrailingPadding)
         }
     }
 }
@@ -44,6 +44,10 @@ extension SearchCategoryCell {
         static let imageFrameWidth: CGFloat = 180
         static let imageFrameHeight: CGFloat = 100
         static let imageCornerRadius: CGFloat = 10
+
+        static let hGridSpacing: CGFloat = 10
+        static let hGridLeadingPadding: CGFloat = 8
+        static let hGridTrailingPadding: CGFloat = 8
     }
 }
 

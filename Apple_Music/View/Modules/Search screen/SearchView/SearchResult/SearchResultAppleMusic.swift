@@ -18,7 +18,7 @@ struct SearchResultAppleMusic: View {
         LazyVGrid(
             columns: columns,
             alignment: .leading,
-            spacing: Metric.lazyVGridSpacing) {
+            spacing: Metric.vGridSpacing) {
                 
                 Text("Недавние поиски")
                     .font(.title).bold()
@@ -58,7 +58,7 @@ struct SearchResultAppleMusic: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, Metric.lazyVGridPaddingBottom)
+            .padding(.bottom, Metric.vGridPaddingBottom)
     }
 }
 
@@ -69,8 +69,8 @@ extension SearchResultAppleMusic {
         static let imageFrameHeight: CGFloat = 120
         static let imageCornerRadius: CGFloat = 10
 
-        static let lazyVGridSpacing: CGFloat = 15
-        static let lazyVGridPaddingBottom: CGFloat = 50
+        static let vGridSpacing: CGFloat = 15
+        static let vGridPaddingBottom: CGFloat = 50
 
         static let textFontSizeUpLabel: CGFloat = 22
         static let textFontSizeDownLabel: CGFloat = 14

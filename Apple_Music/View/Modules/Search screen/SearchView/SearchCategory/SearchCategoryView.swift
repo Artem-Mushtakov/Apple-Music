@@ -19,8 +19,8 @@ struct SearchCategoryView: View {
                     
                     Text("Настроение - осень")
                         .font(.title2).bold()
-                        .padding(.leading, 8)
-                        .padding(.trailing, 90)
+                        .padding(.leading, Metric.textPaddingLeading)
+                        .padding(.trailing, Metric.textPaddingTrailing)
                     
                     Text("Cм. все")
                         .foregroundColor(.red)
@@ -34,12 +34,22 @@ struct SearchCategoryView: View {
                 .foregroundColor(.red)
         }))
         .accentColor( .black)
-        .padding(.bottom, 35)
+        .padding(.bottom, Metric.vStackBottomPadding)
     }
-    
-    struct SearchCategoryView_Previews: PreviewProvider {
-        static var previews: some View {
-            SearchCategoryView()
-        }
+}
+
+extension SearchCategoryView {
+
+    enum Metric {
+        static let textPaddingLeading: CGFloat = 8
+        static let textPaddingTrailing: CGFloat = 90
+
+        static let vStackBottomPadding: CGFloat = 35
+    }
+}
+
+struct SearchCategoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchCategoryView()
     }
 }

@@ -94,7 +94,7 @@ extension SearchView {
         static let searchFrameWidth: CGFloat = 370
         static let searchFrameHeight: CGFloat = 20
         
-        static let imageFrameWidth: CGFloat = 100
+        static let imageFrameWidth: CGFloat = 190
         static let imageFrameHeight: CGFloat = 140
         static let imageCornerRadius: CGFloat = 10
         

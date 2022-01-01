@@ -78,7 +78,6 @@ extension CellMyAlbums {
 struct MetricCellMyAlbums {
     
     static let labelFont = UIFont.boldSystemFont(ofSize: 16.0)
-   
     
     static let titleImageTopAnchorConstant: CGFloat = 5
     static let titleImageLeadingAnchorConstant: CGFloat = 5

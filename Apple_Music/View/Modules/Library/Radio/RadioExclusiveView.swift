@@ -46,7 +46,7 @@ struct RadioExclusiveView: View {
                 }
             }
         }
-        .padding(10)
+        .padding(Metric.lazyVGridSpacing)
     }
 }
 
@@ -62,6 +62,8 @@ extension RadioExclusiveView {
         static let textFontSizeTitleLabel: CGFloat = 14
         static let textFontSizeSubTitleLabel: CGFloat = 22
         static let textFontSizeGroupTitleLabel: CGFloat = 22
+
+        static let lazyVGridSpacing: CGFloat = 10
     }
 }
 

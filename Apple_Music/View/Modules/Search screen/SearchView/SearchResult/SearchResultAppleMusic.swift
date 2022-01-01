@@ -45,7 +45,7 @@ struct SearchResultAppleMusic: View {
                                     .foregroundColor(.gray)
                                     .font(.system(size: Metric.textFontSizeDownLabel))
                             }
-                            Spacer(minLength: 0)
+                            Spacer(minLength: Metric.spacerMinLength)
                             
                             Button {} label: {
                                 Image(systemName: "ellipsis.circle")
@@ -74,6 +74,8 @@ extension SearchResultAppleMusic {
 
         static let textFontSizeUpLabel: CGFloat = 22
         static let textFontSizeDownLabel: CGFloat = 14
+
+        static let spacerMinLength: CGFloat = 0
     }
 }
 

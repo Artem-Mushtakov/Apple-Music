@@ -20,7 +20,7 @@ struct SearchView: View {
         
         NavigationView {
                 
-                VStack(spacing: 18) {
+            VStack(spacing: Metric.vStackSpacing) {
                     
                    if search.isEmpty {
                         
@@ -30,8 +30,8 @@ struct SearchView: View {
                             .frame(width: Metric.searchFrameWidth,
                                    height: Metric.searchFrameHeight,
                                    alignment: .leading)
-                            .padding(.bottom, 5)
-                            .padding(.top, -5)
+                            .padding(.bottom,Metric.textPaddingBottom)
+                            .padding(.top, Metric.textPaddingTop)
 
                     SearchViewIntegrationUiKit()
                     } else {
@@ -62,7 +62,11 @@ extension SearchView {
         static let imageCornerRadius: CGFloat = 10
         
         static let textFrameWidth: CGFloat = 170
-        static var textFrameHeight: CGFloat = 120
+        static let textFrameHeight: CGFloat = 120
+        static let textPaddingBottom: CGFloat = 5
+        static let textPaddingTop: CGFloat = -5
+
+        static let vStackSpacing: CGFloat = 18
     }
 }
 

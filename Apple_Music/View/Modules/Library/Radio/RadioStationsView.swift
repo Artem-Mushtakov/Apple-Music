@@ -17,7 +17,7 @@ struct RadioStationsView: View {
         LazyVGrid(
             columns: columns,
             alignment: .leading,
-            spacing: 15) {
+            spacing: Metric.lazyVGridSpacing) {
                 
                 Text("Станции")
                     .font(.title).bold()
@@ -36,11 +36,11 @@ struct RadioStationsView: View {
                             VStack(alignment: .leading) {
                                 
                                 Text(data.title)
-                                    .font(.system(size: 22))
+                                    .font(.system(size: Metric.textFontSizeTitleLabel))
                                 
                                 Text(data.subtitle)
                                     .foregroundColor(.gray)
-                                    .font(.system(size: 14))
+                                    .font(.system(size: Metric.textFontSizeSubTitleLabel))
                             }
                         }
                     }
@@ -48,16 +48,22 @@ struct RadioStationsView: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 50)
+            .padding(.bottom, Metric.lazyVGridPaddingBottom)
     }
 }
 
 extension RadioStationsView {
-
+    
     enum Metric {
         static let imageFrameWidth: CGFloat = 120
         static let imageFrameHeight: CGFloat = 120
         static let imageCornerRadius: CGFloat = 10
+
+        static let textFontSizeTitleLabel: CGFloat = 22
+        static let textFontSizeSubTitleLabel: CGFloat = 14
+
+        static let lazyVGridSpacing: CGFloat = 15
+        static let lazyVGridPaddingBottom: CGFloat = 50
     }
 }
 

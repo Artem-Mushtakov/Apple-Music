@@ -24,7 +24,7 @@ struct SearchResultView: View {
                     
                     RoundedRectangle(cornerRadius: Metric.buttonBackgroundCornerRadius)
                         .foregroundColor(.gray)
-                        .opacity(0.4)
+                        .opacity(Metric.rectangleOpacity)
                         .frame(width: Metric.buttonBackgroundFrameWidth,
                                height: Metric.buttonBackgroundFrameHeight)
                     
@@ -104,6 +104,8 @@ extension SearchResultView {
         static let buttonRightFrameWidth: CGFloat = 185
         static let buttonRightFrameHeight: CGFloat = 40
         static let buttonRightCornerRadius: CGFloat = 10
+
+        static let rectangleOpacity: CGFloat = 0.4
     }
 }
 

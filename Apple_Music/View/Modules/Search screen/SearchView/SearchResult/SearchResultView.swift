@@ -77,7 +77,7 @@ struct SearchResultView: View {
                     switch didTapLeft {
                     case true:
                         VStack {
-                            SearchResultAppleMusic(searchText: $searchText)
+SearchResultAppleMusic(searchText: $searchText)
                         }
                     case false:
                         VStack {

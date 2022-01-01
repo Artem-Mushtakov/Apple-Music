@@ -16,7 +16,7 @@ struct RadioExclusiveView: View {
     var body: some View {
         
         ScrollView(.horizontal, showsIndicators: false){
-            LazyHGrid(rows: rows, spacing: 10) {
+            LazyHGrid(rows: rows, spacing: Metric.lazyHGridSpacing) {
                 
                 ForEach(dataModel.data, id: \.id) { data in
                     
@@ -25,13 +25,13 @@ struct RadioExclusiveView: View {
                         
                         Text(data.title)
                             .foregroundColor(.gray)
-                            .font(.system(size: 14))
+                            .font(.system(size: Metric.textFontSizeTitleLabel))
                         
                         Text(data.subTitle)
-                            .font(.system(size: 22))
+                            .font(.system(size: Metric.textFontSizeSubTitleLabel))
                         
                         Text(data.groupTitle)
-                            .font(.system(size: 22))
+                            .font(.system(size: Metric.textFontSizeGroupTitleLabel))
                             .foregroundColor(.gray)
                         
                         Image(data.image)
@@ -56,6 +56,12 @@ extension RadioExclusiveView {
         static let imageFrameWidth: CGFloat = 350
         static let imageFrameHeight: CGFloat = 250
         static let imageCornerRadius: CGFloat = 5
+
+        static let lazyHGridSpacing: CGFloat = 10
+
+        static let textFontSizeTitleLabel: CGFloat = 14
+        static let textFontSizeSubTitleLabel: CGFloat = 22
+        static let textFontSizeGroupTitleLabel: CGFloat = 22
     }
 }
 

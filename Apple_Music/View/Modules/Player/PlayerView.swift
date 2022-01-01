@@ -11,12 +11,12 @@ struct PlayerView: View {
     
     @Binding var expand: Bool
     
-    @State var volume: CGFloat = 0
-    @State var trackTime: CGFloat = 0
-    @State var offset: CGFloat = 0
+    @State var volume: CGFloat = Metric.volume
+    @State var trackTime: CGFloat = Metric.trackTime
+    @State var offset: CGFloat = Metric.offset
     
     var animation: Namespace.ID
-    var height = UIScreen.main.bounds.height / 3
+    var height = UIScreen.main.bounds.height / Metric.heightScreen
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
 
     var body: some View {
@@ -25,28 +25,28 @@ struct PlayerView: View {
             
             Capsule()
                 .fill()
-                .frame(width: expand ? 60 : 0, height: expand ? 4 : 0)
-                .opacity(expand ? 1 : 0)
-                .padding(.top, expand ? safeArea?.top : 0)
-                .padding(.vertical, expand ? 30 : 0)
+                .frame(width: expand ? Metric.widthFrameCapsule : Metric.anotherParametr, height: expand ? Metric.heightFrameCapsule : Metric.anotherParametr)
+                .opacity(expand ? Metric.opacityCapsule : Metric.anotherParametr)
+                .padding(.top, expand ? safeArea?.top : Metric.anotherParametr)
+                .padding(.vertical, expand ? Metric.paddingCapsule : Metric.anotherParametr)
             
-            HStack(spacing: 15) {
+            HStack(spacing: Metric.hStackImageSpacing) {
                 
-                if expand { Spacer(minLength: 0) }
+                if expand { Spacer(minLength: Metric.spacerMinLength) }
                 
                 Image("michaelkrugPlayer")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: expand ? height : 50, height: expand ? height : 50)
-                    .cornerRadius(10)
+                    .frame(width: expand ? height : Metric.heightImage, height: expand ? height : Metric.heightImage)
+                    .cornerRadius(Metric.cornerRadiusImage)
                 
                 if !expand {
                     Text("Михаил Круг - Золотые купола")
-                        .lineLimit(1)
+                        .lineLimit(Metric.lineLimit)
                         .matchedGeometryEffect(id: "Label", in: animation)
                 }
                 
-                Spacer(minLength: 0)
+                Spacer(minLength: Metric.spacerMinLength)
                 
                 if !expand {
                     Button {} label: {
@@ -65,9 +65,9 @@ struct PlayerView: View {
             .padding(.horizontal)
             .padding(.vertical)
             
-            VStack(spacing: 15) {
+            VStack(spacing: Metric.vStackPlayerSpacing) {
                 
-                Spacer(minLength: 0)
+                Spacer(minLength: Metric.spacerMinLength)
                 
                 HStack {
                     if expand {
@@ -75,7 +75,7 @@ struct PlayerView: View {
                             .matchedGeometryEffect(id: "Label", in: animation)
                     }
                     
-                    Spacer(minLength: 0)
+                    Spacer(minLength: Metric.spacerMinLength)
                     
                     Button { } label: {
                         Image(systemName: "ellipsis.circle")
@@ -84,23 +84,23 @@ struct PlayerView: View {
                     }
                 }
                 .padding()
-                .padding(.top, 20)
+                .padding(.top, Metric.vStackPlayerPaddingTop)
                 
                 HStack {
                     
                     Text("00:30")
-                        .font(.system(size: 12))
+                        .font(.system(size: Metric.timeTrackFontSize))
                     
                     Slider(value: $trackTime)
                     
                     Text("3:40")
-                        .font(.system(size: 12))
+                        .font(.system(size: Metric.timeTrackFontSize))
                 }
                 .padding()
                 
-                Spacer(minLength: 0)
+                Spacer(minLength: Metric.spacerMinLength)
                 
-                HStack(spacing: 15) {
+                HStack(spacing: Metric.hStackPlayerButtonSpacing) {
                     
                     Button {} label: {
                         
@@ -126,16 +126,16 @@ struct PlayerView: View {
                     }
                     .padding()
                 }
-                Spacer(minLength: 0)
+                Spacer(minLength: Metric.spacerMinLength)
                 
-                HStack(spacing: 15) {
+                HStack(spacing: Metric.hStackVolumeScrollSpacing) {
                     Image(systemName: "speaker.fill")
                     Slider(value: $volume)
                     Image(systemName: "speaker.wave.2.fill")
                 }
                 .padding()
                 
-                HStack(spacing: 80) {
+                HStack(spacing: Metric.hStackDownButtonSpacing) {
                     
                     Button { } label: {
                         
@@ -158,15 +158,15 @@ struct PlayerView: View {
                             .foregroundColor(.primary)
                     }
                 }
-                .padding(.bottom, safeArea?.bottom == 0 ? 15 : safeArea?.bottom)
+                .padding(.bottom, safeArea?.bottom == Metric.anotherParametr ? Metric.hStackDownButtonPaddingBottom : safeArea?.bottom)
             }
-            .frame(height: expand ? nil : 0)
-            .opacity(expand ? 1 : 0)
+            .frame(height: expand ? nil : Metric.anotherParametr)
+            .opacity(expand ? Metric.hStackDownButtonOpacity : Metric.anotherParametr)
         }
-        .frame(maxHeight: expand ? .infinity : 60)
+        .frame(maxHeight: expand ? .infinity : Metric.maxHeightFrame)
         .background(
             
-            VStack(spacing: 0) {
+            VStack(spacing: Metric.anotherParametr) {
                 PlayerBlurView()
                 Divider()
             }
@@ -175,8 +175,8 @@ struct PlayerView: View {
                         expand = true
                     }
                 })
-        .cornerRadius(expand ? 20 : 0)
-        .offset(y: expand ? 0 : -48)
+        .cornerRadius(expand ? Metric.cornerRadius : Metric.anotherParametr)
+        .offset(y: expand ? Metric.anotherParametr : Metric.offsetY)
         .offset(y: offset)
         .gesture(DragGesture().onEnded(onEnded(value:)).onChanged(onChanged(value:)))
         .ignoresSafeArea()
@@ -184,7 +184,7 @@ struct PlayerView: View {
     
     func onChanged(value: DragGesture.Value) {
         
-        if value.translation.height > 0 && expand {
+        if value.translation.height > Metric.anotherParametr && expand {
             
             offset = value.translation.height
         }
@@ -192,12 +192,46 @@ struct PlayerView: View {
     
     func onEnded(value: DragGesture.Value) {
         
-        withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.95, blendDuration: 0.95)) {
+        withAnimation(.interactiveSpring(response: Metric.responce, dampingFraction: Metric.dampingFraction, blendDuration: Metric.blendDuration)) {
             
             if value.translation.height > height {
                 expand = false
             }
-            offset = 0
+            offset = Metric.offset
         }
+    }
+}
+
+extension PlayerView {
+    enum Metric {
+        static let heightScreen: CGFloat = 3
+        static let volume: CGFloat = 0
+        static let offset: CGFloat = 0
+        static let trackTime: CGFloat = 0
+        static let widthFrameCapsule: CGFloat = 60
+        static let heightFrameCapsule: CGFloat = 4
+        static let anotherParametr: CGFloat = 0
+        static let opacityCapsule: CGFloat = 1
+        static let paddingCapsule: CGFloat = 30
+        static let spacerMinLength: CGFloat = 0
+        static let heightImage: CGFloat = 50
+        static let widthImage: CGFloat = 40
+        static let cornerRadiusImage: CGFloat = 10
+        static let lineLimit: Int = 1
+        static let hStackImageSpacing: CGFloat = 15
+        static let vStackPlayerSpacing: CGFloat = 15
+        static let vStackPlayerPaddingTop: CGFloat = 20
+        static let timeTrackFontSize: CGFloat = 12
+        static let hStackPlayerButtonSpacing: CGFloat = 15
+        static let hStackVolumeScrollSpacing: CGFloat = 15
+        static let hStackDownButtonSpacing: CGFloat = 80
+        static let hStackDownButtonPaddingBottom: CGFloat = 15
+        static let hStackDownButtonOpacity: CGFloat = 1
+        static let maxHeightFrame: CGFloat = 60
+        static let cornerRadius: CGFloat = 20
+        static let offsetY: CGFloat = -48
+        static let responce: CGFloat = 0.5
+        static let dampingFraction: CGFloat = 0.95
+        static let blendDuration: CGFloat = 0.95
     }
 }

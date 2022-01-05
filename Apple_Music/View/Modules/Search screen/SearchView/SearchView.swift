@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     
     var columns = Array(
-        repeating:GridItem(.flexible(),spacing: Metric.columnsSpacing),
+        repeating: GridItem(.flexible(), spacing: Metric.columnsSpacing),
         count: Metric.columnsCount)
     
     @State private var dataModel = RadioModelStations.data
@@ -19,26 +19,26 @@ struct SearchView: View {
     var body: some View {
         
         NavigationView {
-                
+
             VStack(spacing: Metric.vStackSpacing) {
-                    
-                   if search.isEmpty {
-                        
-                        Text("Поиск по категориям")
-                            .foregroundColor(.black)
-                            .font(.title2).bold()
-                            .frame(width: Metric.searchFrameWidth,
-                                   height: Metric.searchFrameHeight,
-                                   alignment: .leading)
-                            .padding(.bottom,Metric.textPaddingBottom)
-                            .padding(.top, Metric.textPaddingTop)
+
+                if search.isEmpty {
+
+                    Text("Поиск по категориям")
+                        .foregroundColor(.black)
+                        .font(.title2).bold()
+                        .frame(width: Metric.searchFrameWidth,
+                               height: Metric.searchFrameHeight,
+                               alignment: .leading)
+                        .padding(.bottom,Metric.textPaddingBottom)
+                        .padding(.top, Metric.textPaddingTop)
 
                     SearchViewIntegrationUiKit()
-                    } else {
+                } else {
 
-                        SearchResultView(searchText: $search)
-                    }
+                    SearchResultView(searchText: $search)
                 }
+            }
             .navigationBarTitle(Text("Поиск"))
 
         }

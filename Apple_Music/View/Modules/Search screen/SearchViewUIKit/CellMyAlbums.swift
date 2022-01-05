@@ -46,8 +46,8 @@ extension CellMyAlbums {
         
         falseTranslatesAutoresizingMaskIntoConstraints()
         
-        self.contentView.addSubview(titleImage)
-        self.contentView.addSubview(titleLabel)
+        contentView.addSubview(titleImage)
+        contentView.addSubview(titleLabel)
 
         titleImage.clipsToBounds = true
         titleImage.layer.masksToBounds = true
@@ -56,10 +56,10 @@ extension CellMyAlbums {
         
         NSLayoutConstraint.activate([
             
-            titleImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: MetricCellMyAlbums.titleImageTopAnchorConstant),
-            titleImage.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            titleImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: MetricCellMyAlbums.titleImageLeadingAnchorConstant),
-            titleImage.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: MetricCellMyAlbums.titleImageTrailingAnchorConstant),
+            titleImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: MetricCellMyAlbums.titleImageTopAnchorConstant),
+            titleImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            titleImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: MetricCellMyAlbums.titleImageLeadingAnchorConstant),
+            titleImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: MetricCellMyAlbums.titleImageTrailingAnchorConstant),
             
             titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: MetricCellMyAlbums.titleLabelTopAnchorConstant),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: MetricCellMyAlbums.titleLabelLeadingAnchorConstant),

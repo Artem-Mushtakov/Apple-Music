@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchCategoryCell: View {
     
     @ObservedObject var dataModel = RadioModelStationsData()
-    var rows  = [GridItem(.flexible())]
+    var rows = [GridItem(.flexible())]
     
     var body: some View {
         

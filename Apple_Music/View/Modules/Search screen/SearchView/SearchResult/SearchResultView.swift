@@ -74,14 +74,13 @@ struct SearchResultView: View {
                 }
                 
                 if didTap {
-                    switch didTapLeft {
-                    case true:
+                    if didTapLeft {
                         VStack {
-SearchResultAppleMusic(searchText: $searchText)
+                            SearchResultAppleMusic(searchText: $searchText)
                         }
-                    case false:
+                    } else {
                         VStack {
-                            SearchResultLibrary()
+                            SearchResultAppleMusic(searchText: $searchText)
                         }
                     }
                 }

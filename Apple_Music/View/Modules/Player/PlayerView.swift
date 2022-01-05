@@ -25,7 +25,8 @@ struct PlayerView: View {
             
             Capsule()
                 .fill()
-                .frame(width: expand ? Metric.widthFrameCapsule : Metric.anotherParametr, height: expand ? Metric.heightFrameCapsule : Metric.anotherParametr)
+                .frame(width: expand ? Metric.widthFrameCapsule : Metric.anotherParametr,
+                       height: expand ? Metric.heightFrameCapsule : Metric.anotherParametr)
                 .opacity(expand ? Metric.opacityCapsule : Metric.anotherParametr)
                 .padding(.top, expand ? safeArea?.top : Metric.anotherParametr)
                 .padding(.vertical, expand ? Metric.paddingCapsule : Metric.anotherParametr)

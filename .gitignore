@@ -1,19 +1,18 @@
-# # General
+# General
+.DS_Store 
+.AppleDouble 
+.LSOverride
 
-.DS_Store .AppleDouble .LSOverride
-
-# # Thumbnails
-
+# Thumbnails
 ._*
 
-## # # User settings
-
+## User settings
 xcuserdata/
+
 *.xcscmblueprint 
 *.xccheckout
 
-## # # compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/ 
 DerivedData/ 
 *.moved-aside
@@ -28,8 +27,7 @@ DerivedData/
 *.ipa
 *.xcuserstate
 
-### # # #  Xcode Patch # # #
-
+### Xcode Patch ###
 **.xcodeproj/* *
 !**.xcodeproj/project.pbxproj*
 !*.xcodeproj/xcshareddata/
@@ -37,11 +35,9 @@ DerivedData/
 */**.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-### # # #  AppCode # # #
-
+### AppCode ###
 .idea/*
 
-### # # #  fastlane # # #
-
+### fastlane ###
 fastlane/report.xml
 *.generated.swift *.xcuserstate

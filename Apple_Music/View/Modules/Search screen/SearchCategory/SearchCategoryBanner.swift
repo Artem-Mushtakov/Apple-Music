@@ -14,10 +14,11 @@ struct SearchCategoryBanner: View {
     var rows  = [GridItem(.flexible())]
     
     var body: some View {
-        
-        ScrollView(.horizontal, showsIndicators: false){
-            LazyHGrid(rows: rows, spacing: 10) {
-                
+
+        ScrollView(.horizontal, showsIndicators: false) {
+
+            LazyHGrid(rows: rows, spacing: Metric.vGridSpacing) {
+
                 ForEach(dataModel.data, id: \.id) { data in
                     
                     VStack(alignment: .leading) {
@@ -25,27 +26,42 @@ struct SearchCategoryBanner: View {
                         
                         Text(data.title)
                             .foregroundColor(.gray)
-                            .font(.system(size: 14))
-                        
+                            .font(.system(size: Metric.textFontSizeHeaderLabel))
+
                         Text(data.subTitle)
-                            .font(.system(size: 22))
-                        
+                            .font(.system(size: Metric.textFontSizeLabel))
+
                         Text(data.groupTitle)
-                            .font(.system(size: 22))
+                            .font(.system(size: Metric.textFontSizeLabel))
                             .foregroundColor(.gray)
                         
                         Image(data.image)
                             .resizable()
-                            .frame(width: 350, height: 250)
+                            .frame(width: Metric.imageFrameWidth, height: Metric.imageFrameHeight)
                             .scaledToFill()
-                            .cornerRadius(5)
-                        
+                            .cornerRadius(Metric.imageCornerRadius)
+
                         Divider()
                     }
                 }
             }
         }
-        .padding(10)
+        .padding(Metric.vGridPadding)
+    }
+}
+
+extension SearchCategoryBanner {
+
+    enum Metric {
+        static let imageFrameWidth: CGFloat = 350
+        static let imageFrameHeight: CGFloat = 250
+        static let imageCornerRadius: CGFloat = 5
+
+        static let vGridSpacing: CGFloat = 10
+        static let vGridPadding: CGFloat = 10
+
+        static let textFontSizeHeaderLabel: CGFloat = 14
+        static let textFontSizeLabel: CGFloat = 22
     }
 }
 

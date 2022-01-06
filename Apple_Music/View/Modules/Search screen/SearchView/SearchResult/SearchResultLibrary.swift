@@ -1,13 +1,13 @@
 //
-//  RadioStationsView.swift
+//  SearchResultLibrary.swift
 //  Apple_Music
 //
-//  Created by Артем on 16.10.2021.
+//  Created by Артем on 30.11.2021.
 //
 
 import SwiftUI
 
-struct RadioStationsView: View {
+struct SearchResultLibrary: View {
     
     @ObservedObject var dataModel = RadioModelStationsData()
     var columns  = [GridItem(.flexible())]
@@ -17,16 +17,17 @@ struct RadioStationsView: View {
         LazyVGrid(
             columns: columns,
             alignment: .leading,
-            spacing: Metric.lazyVGridSpacing) {
+            spacing: Metric.vGridSpacing) {
                 
-                Text("Станции")
+                Text("Медиатека")
                     .font(.title).bold()
                 
-                ForEach(dataModel.data, id: \.id) { data in
+                ForEach(0...10, id: \.self) { data in
+                    
                     VStack {
                         HStack {
                             
-                            Image(data.image)
+                            Image("upNextRadio")
                                 .resizable()
                                 .frame(width: Metric.imageFrameWidth,
                                        height: Metric.imageFrameHeight)
@@ -35,12 +36,19 @@ struct RadioStationsView: View {
                             
                             VStack(alignment: .leading) {
                                 
-                                Text(data.title)
-                                    .font(.system(size: Metric.textFontSizeTitleLabel))
+                                Text("Тест")
+                                    .font(.system(size: Metric.textFontSizeUpLabel))
                                 
-                                Text(data.subtitle)
+                                Text("Тест")
                                     .foregroundColor(.gray)
-                                    .font(.system(size: Metric.textFontSizeSubTitleLabel))
+                                    .font(.system(size: Metric.textFontSizeDownLabel))
+                            }
+                            
+                            Spacer(minLength: Metric.minLength)
+                            
+                            Button {} label: {
+                                Image(systemName: "ellipsis.circle")
+                                    .foregroundColor(.gray)
                             }
                         }
                     }
@@ -48,27 +56,29 @@ struct RadioStationsView: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, Metric.lazyVGridPaddingBottom)
+            .padding(.bottom, Metric.vGridPaddingBottom)
     }
 }
 
-extension RadioStationsView {
+extension SearchResultLibrary {
     
     enum Metric {
         static let imageFrameWidth: CGFloat = 120
         static let imageFrameHeight: CGFloat = 120
         static let imageCornerRadius: CGFloat = 10
 
-        static let textFontSizeTitleLabel: CGFloat = 22
-        static let textFontSizeSubTitleLabel: CGFloat = 14
+        static let vGridSpacing: CGFloat = 15
+        static let vGridPaddingBottom: CGFloat = 50
 
-        static let lazyVGridSpacing: CGFloat = 15
-        static let lazyVGridPaddingBottom: CGFloat = 50
+        static let textFontSizeUpLabel: CGFloat = 22
+        static let textFontSizeDownLabel: CGFloat = 14
+
+        static let minLength:CGFloat = 0
     }
 }
 
-struct RadioStationsView_Previews: PreviewProvider {
+struct SearchResultLibrary_Previews: PreviewProvider {
     static var previews: some View {
-        RadioStationsView()
+        SearchResultLibrary()
     }
 }

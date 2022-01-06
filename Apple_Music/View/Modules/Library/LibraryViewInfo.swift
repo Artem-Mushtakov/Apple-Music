@@ -13,17 +13,25 @@ struct LibraryViewInfo: View {
             Spacer()
             
             Text("Ищите свою музыку?")
-                .font(.system(size: 24,
+                .font(.system(size: Metric.textFontSizeUpLabel,
                               weight: .bold,
                               design: .default))
             
             Text("Здесь появится купленная вами в iTunes Store музыка.")
-                .frame(width: 300)
+                .frame(width: Metric.textWidthDownLabel)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
             
             Spacer()
         }
+    }
+}
+
+extension LibraryViewInfo {
+
+    enum Metric {
+        static let textFontSizeUpLabel: CGFloat = 24
+        static let textWidthDownLabel: CGFloat = 300
     }
 }
 

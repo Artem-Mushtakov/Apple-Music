@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct TabBar: View {
+    
+    @State private var searchText = ""
+    
+    @State var expand = false
+    
+    @Namespace var animation
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.clear
+    }
+    
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            
+
             TabView {
                 LibraryView()
                     .tabItem {
@@ -23,14 +34,15 @@ struct TabBar: View {
                         Text("Радио")
                     }
                 
-                Text("Поиск")
+                SearchView()
                     .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Поиск")
+                            Image(systemName: "magnifyingglass")
+                            Text("Поиск")
                     }
             }
             .accentColor(Color.red)
-            PlayerView()
+            
+            PlayerView(expand: $expand, animation: animation)
         }
     }
 }

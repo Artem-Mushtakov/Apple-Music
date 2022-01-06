@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RadioModelStations: Identifiable, Hashable {
+struct RadioModelStations: Identifiable {
     let id = UUID()
     let image: String
     let title: String
@@ -36,6 +36,21 @@ extension RadioModelStations {
                            subtitle: "Зажигай."),
         RadioModelStations(image: "superBloomRadio",
                            title: "RnB",
-                           subtitle: "Будь в движении.")
+                           subtitle: "Будь в движении."),
+        RadioModelStations(image: "michaelkrugPlayer",
+                           title: "Музыка 90-х",
+                           subtitle: "Зажигай."),
+        RadioModelStations(image: "zaneLoweShow",
+                           title: "The Zane Lowe Show",
+                           subtitle: "Apple Music"),
+        RadioModelStations(image: "upNextRadio",
+                           title: "Up Next Radio",
+                           subtitle: "Apple Music"),
+        RadioModelStations(image: "africaNowRadio",
+                           title: "Для расслабления",
+                           subtitle: "Электронная медитация."),
+        RadioModelStations(image: "classicRock",
+                           title: "Классика рokа",
+                           subtitle: "Гитарный звук.")
     ]
 }

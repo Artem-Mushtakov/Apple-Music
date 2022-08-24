@@ -1,22 +1,22 @@
 //
-//  RadioExclusiveView.swift
+//  SearchCategory.swift
 //  Apple_Music
 //
-//  Created by Артем on 16.10.2021.
+//  Created by Артем on 30.11.2021.
 //
 
 import SwiftUI
 
-struct RadioExclusiveView: View {
+struct SearchCategoryBanner: View {
     
     @ObservedObject var dataModel = RadioModelExclusiveData()
-    
-    var rows  = [GridItem(.flexible())]
+    private var rows  = [GridItem(.flexible())]
     
     var body: some View {
         
-        ScrollView(.horizontal, showsIndicators: false){
-            LazyHGrid(rows: rows, spacing: Metric.lazyHGridSpacing) {
+        ScrollView(.horizontal, showsIndicators: false) {
+            
+            LazyHGrid(rows: rows, spacing: Metric.vGridSpacing) {
                 
                 ForEach(dataModel.data, id: \.id) { data in
                     
@@ -25,19 +25,18 @@ struct RadioExclusiveView: View {
                         
                         Text(data.title)
                             .foregroundColor(.gray)
-                            .font(.system(size: Metric.textFontSizeTitleLabel))
+                            .font(.system(size: Metric.textFontSizeHeaderLabel))
                         
                         Text(data.subTitle)
-                            .font(.system(size: Metric.textFontSizeSubTitleLabel))
+                            .font(.system(size: Metric.textFontSizeLabel))
                         
                         Text(data.groupTitle)
-                            .font(.system(size: Metric.textFontSizeGroupTitleLabel))
+                            .font(.system(size: Metric.textFontSizeLabel))
                             .foregroundColor(.gray)
                         
                         Image(data.image)
                             .resizable()
-                            .frame(width: Metric.imageFrameWidth,
-                                   height: Metric.imageFrameHeight)
+                            .frame(width: Metric.imageFrameWidth, height: Metric.imageFrameHeight)
                             .scaledToFill()
                             .cornerRadius(Metric.imageCornerRadius)
                         
@@ -46,29 +45,27 @@ struct RadioExclusiveView: View {
                 }
             }
         }
-        .padding(Metric.lazyVGridSpacing)
+        .padding(Metric.vGridPadding)
     }
 }
 
-extension RadioExclusiveView {
-    
+extension SearchCategoryBanner {
+
     enum Metric {
         static let imageFrameWidth: CGFloat = 350
         static let imageFrameHeight: CGFloat = 250
         static let imageCornerRadius: CGFloat = 5
 
-        static let lazyHGridSpacing: CGFloat = 10
+        static let vGridSpacing: CGFloat = 10
+        static let vGridPadding: CGFloat = 10
 
-        static let textFontSizeTitleLabel: CGFloat = 14
-        static let textFontSizeSubTitleLabel: CGFloat = 22
-        static let textFontSizeGroupTitleLabel: CGFloat = 22
-
-        static let lazyVGridSpacing: CGFloat = 10
+        static let textFontSizeHeaderLabel: CGFloat = 14
+        static let textFontSizeLabel: CGFloat = 22
     }
 }
 
-struct RadioExclusiveView_Previews: PreviewProvider {
+struct SearchCategory_Previews: PreviewProvider {
     static var previews: some View {
-        RadioExclusiveView()
+        SearchCategoryBanner()
     }
 }
